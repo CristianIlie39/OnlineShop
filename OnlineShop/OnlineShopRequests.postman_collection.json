@@ -1,0 +1,608 @@
+{
+	"info": {
+		"_postman_id": "4b67047f-6f2d-43dc-a760-ed0e6311fb1d",
+		"name": "OnlineShopRequests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12241193"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "/registerClientUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Marinescu Gabriel\",\r\n    \"password\":\"parola1234\",\r\n    \"dateOfBirth\":\"1985-05-15\",\r\n    \"phoneNumber\":\"0040755025478\",\r\n    \"emailAddress\":\"gabriel.marinescu@yahoo.com\",\r\n    \"address\":\"Galati, str. Brailei, nr. 1\",\r\n    \"userRole\":false,\r\n    \"active\":false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registerUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registerUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/registerAdminUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Stanciu Marian\",\r\n    \"password\":\"passABCD\",\r\n    \"dateOfBirth\":\"1990-09-25\",\r\n    \"phoneNumber\":\"0040755000555\",\r\n    \"emailAddress\":\"marian.stanciu@gmail.com\",\r\n    \"address\":\"Braila, str. Galati, nr. 10\",\r\n    \"userRole\":true,\r\n    \"active\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/registerUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"registerUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/loginUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/loginUser?email=gabriel.marinescu@yahoo.com&password=parola1234",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"loginUser"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "gabriel.marinescu@yahoo.com"
+								},
+								{
+									"key": "password",
+									"value": "parola1234"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/logoutUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/logout?email=gabriel.marinescu@yahoo.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"logout"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "gabriel.marinescu@yahoo.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/editUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/editUser?email=gabriel.marinescu@yahoo.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"editUser"
+							],
+							"query": [
+								{
+									"key": "email",
+									"value": "gabriel.marinescu@yahoo.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateUserAddress",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateUserAddress?newAddress=Galati, str. Frumoasa, nr. 20&email=gabriel.marinescu@yahoo.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateUserAddress"
+							],
+							"query": [
+								{
+									"key": "newAddress",
+									"value": "Galati, str. Frumoasa, nr. 20"
+								},
+								{
+									"key": "email",
+									"value": "gabriel.marinescu@yahoo.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteUser?emailUserForDelete=gabriel.marinescu@yahoo.com&adminEmail=marian.stanciu@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteUser"
+							],
+							"query": [
+								{
+									"key": "emailUserForDelete",
+									"value": "gabriel.marinescu@yahoo.com"
+								},
+								{
+									"key": "adminEmail",
+									"value": "marian.stanciu@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/getUser?userEmail=gabriel.marinescu@yahoo.com&adminEmail=marian.stanciu@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getUser"
+							],
+							"query": [
+								{
+									"key": "userEmail",
+									"value": "gabriel.marinescu@yahoo.com"
+								},
+								{
+									"key": "adminEmail",
+									"value": "marian.stanciu@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/getAllUsers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getAllUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getUserByNameAndEmail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/getUserByNameAndEmail?name=Marinescu Gabriel&email=gabriel.marinescu@yahoo.com&adminEmail=marian.stanciu@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getUserByNameAndEmail"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Marinescu Gabriel"
+								},
+								{
+									"key": "email",
+									"value": "gabriel.marinescu@yahoo.com"
+								},
+								{
+									"key": "adminEmail",
+									"value": "marian.stanciu@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/changeActiveStatusForAllUsers",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/changeActiveStatusForAllUsers?status=false&adminEmail=marian.stanciu@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"changeActiveStatusForAllUsers"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "false"
+								},
+								{
+									"key": "adminEmail",
+									"value": "marian.stanciu@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "/addProduct1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"laptop\",\r\n    \"productDescription\":\"gaming\",\r\n    \"stock\":10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/addProduct2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"imprimanta\",\r\n    \"productDescription\":\"multifunctionala\",\r\n    \"stock\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/addProduct3",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"telefon\",\r\n    \"productDescription\":\"android\",\r\n    \"stock\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/addProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/updateProduct?newProductName=imprimanta laser&newProductDescription=multifunctionala wireless&currentProductName=imprimanta&adminEmail=marian.stanciu@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"updateProduct"
+							],
+							"query": [
+								{
+									"key": "newProductName",
+									"value": "imprimanta laser"
+								},
+								{
+									"key": "newProductDescription",
+									"value": "multifunctionala wireless"
+								},
+								{
+									"key": "currentProductName",
+									"value": "imprimanta"
+								},
+								{
+									"key": "adminEmail",
+									"value": "marian.stanciu@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/deleteProduct?productName=laptop&adminEmail=marian.stanciu@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"deleteProduct"
+							],
+							"query": [
+								{
+									"key": "productName",
+									"value": "laptop"
+								},
+								{
+									"key": "adminEmail",
+									"value": "marian.stanciu@gmail.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getProductList",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/getProductList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getProductList"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "/buyProduct1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"imprimanta laser\",\r\n    \"numberOfProducts\":1,\r\n    \"userDTO\":{\r\n        \"name\":\"Marinescu Gabriel\",\r\n        \"password\":\"parola1234\",\r\n        \"dateOfBirth\":\"1985-05-15\",\r\n        \"phoneNumber\":\"0040755025478\",\r\n        \"emailAddress\":\"gabriel.marinescu@yahoo.com\",\r\n        \"address\":\"Galati, str. Brailei, nr. 1\",\r\n        \"userRole\":false,\r\n        \"active\":false\r\n    },\r\n    \"productDTO\":{\r\n        \"productName\":\"imprimanta laser\",\r\n        \"productDescription\":\"multifunctionala wireless\",\r\n        \"stock\":2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/buyProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buyProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/buyProduct2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"productName\":\"telefon\",\r\n    \"numberOfProducts\":1,\r\n    \"userDTO\":{\r\n        \"name\":\"Marinescu Gabriel\",\r\n        \"password\":\"parola1234\",\r\n        \"dateOfBirth\":\"1985-05-15\",\r\n        \"phoneNumber\":\"0040755025478\",\r\n        \"emailAddress\":\"gabriel.marinescu@yahoo.com\",\r\n        \"address\":\"Galati, str. Brailei, nr. 1\",\r\n        \"userRole\":false,\r\n        \"active\":true\r\n    },\r\n    \"productDTO\":{\r\n        \"productName\":\"telefon\",\r\n        \"productDescription\":\"android\",\r\n        \"stock\":4\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/buyProduct",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"buyProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/getListOfPurchases",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/getListOfPurchases",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"getListOfPurchases"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
